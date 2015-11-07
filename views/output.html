@@ -42,6 +42,18 @@
         <![endif]-->
     </head>
     <body>
+        <!-- navigation panel -->
+        <nav class="navbar navbar-default navbar-fixed-top nav-transparent overlay-nav sticky-nav nav-border-bottom nav-white" role="navigation">
+             <div class="container">
+                <div class="row">
+                    <!-- logo -->
+                    <div class="col-md-2 pull-left"><a class="logo-light" href="index.html"><img alt="" src="images/logo-white.png" class="logo" /></a><a class="logo-dark" href="index.html"><img alt="" src="images/logo-light.png" class="logo" /></a></div>
+                    <!-- end logo -->
+                </div>
+            </div>
+        </nav>
+        <!--end navigation panel --> 
+
         <section class="no-padding-top travel-booking bg-magenta">
             <div class="container">
                 <div class="row">
@@ -66,55 +78,31 @@
                                                 <div class="col-lg-4 col-md-6 col-sm-6 no-padding-left xs-no-padding">
                                                     <div class="form-group no-margin-bottom">
                                                         <!-- label -->
-                                                        <label class="text-uppercase white-text">Where do you want to go?</label>
+                                                        <label class="text-uppercase white-text">From</label>
                                                         <!-- end label -->
                                                         <!-- input -->
-                                                        <input type="text" name="name" id="textbox1" placeholder="Eg. Melbourne, Australia">
+                                                        <input type="text" name="name" id="textbox1" placeholder="Origination">
                                                         <!-- end input -->
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-3 col-md-6 col-sm-6 no-padding-left xs-no-padding">
                                                     <div class="form-group no-margin-bottom">
                                                         <!-- label -->
-                                                        <label class="text-uppercase white-text">Departure</label>
+                                                        <label class="text-uppercase white-text">to</label>
                                                         <!-- end label -->
                                                         <!-- input -->
-                                                        <input type="text" name="name" id="textbox2" placeholder="MM/DD/YY">
+                                                        <input type="text" name="name" id="textbox2" placeholder="Destination">
                                                         <!-- end input -->
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-3 col-md-6 col-sm-6 no-padding-left xs-no-padding">
-                                                    <div class="form-group no-margin-bottom">
-                                                        <!-- label -->
-                                                        <label class="text-uppercase white-text">Return</label>
-                                                        <!-- end label -->
-                                                        <!-- input -->
-                                                        <input type="text" name="name" id="textbox3" placeholder="MM/DD/YY">
-                                                        <!-- end input -->
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-2 col-md-6 col-sm-6 no-padding-left xs-no-padding">
-                                                    <div class="form-group no-margin-bottom">
-                                                        <!-- label -->
-                                                        <label class="text-uppercase white-text">Rooms</label>
-                                                        <!-- end label -->
-                                                        <!-- input -->
-                                                        <div class="select-style no-border no-margin-top margin-eight">
-                                                            <select>
-                                                                <option value="">01</option>
-                                                                <option value="">02</option>
-                                                                <option value="">03</option>
-                                                                <option value="">04</option>
-                                                            </select>
-                                                        </div>
                                                         <!-- end input -->
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 col-sm-6 no-padding-left">
-                                                    <button class="highlight-button-dark btn btn-medium  button xs-margin-bottom-five"><i class="fa fa-search"></i>Search</button>
+                                                    <button class="highlight-button-dark btn btn-medium  button xs-margin-bottom-five"><i class="fa fa-search"></i>Book</button>
                                                 </div>
                                                 <div class="col-md-6 col-sm-6 no-padding-left text-right xs-text-left ">
-                                                    <a href="#" class="text-small text-uppercase white-text text-decoration-underline font-weight-600 margin-five display-inline-block xs-no-margin">Popular Hotels</a>
+                                                    
                                                 </div>
                                             </form>
                                         </div>
@@ -122,199 +110,8 @@
                                 </div>
                                 <!-- end tab content -->
                                 <!-- tab content -->
-                                <div class="tab-pane fade in" id="tab3_sec2">
-                                    <div class="row margin-two no-margin-bottom">
-                                        <div class="col-md-8 col-sm-12 center-col">
-                                            <form action="#" method="post">
-                                                <div class="col-lg-4 col-md-6 col-sm-6 no-padding-left xs-no-padding">
-                                                    <div class="form-group no-margin-bottom">
-                                                        <!-- label -->
-                                                        <label class="text-uppercase white-text">From</label>
-                                                        <!-- end label -->
-                                                        <!-- input -->
-                                                        <input type="text" name="name" id="textbox4" placeholder="Eg. Melbourne, Australia">
-                                                        <!-- end input -->
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-md-6 col-sm-6 no-padding-left xs-no-padding">
-                                                    <div class="form-group no-margin-bottom">
-                                                        <!-- label -->
-                                                        <label class="text-uppercase white-text">To</label>
-                                                        <!-- end label -->
-                                                        <!-- input -->
-                                                        <input type="text" name="name" id="textbox5" placeholder="Eg. New York, United States">
-                                                        <!-- end input -->
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-md-6 col-sm-6 no-padding-left xs-no-padding">
-                                                    <div class="form-group no-margin-bottom">
-                                                        <!-- label -->
-                                                        <label class="text-uppercase white-text">Departure</label>
-                                                        <!-- end label -->
-                                                        <!-- input -->
-                                                        <input type="text" name="name" id="textbox6" placeholder="MM/DD/YY">
-                                                        <!-- end input -->
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-2 col-md-6 col-sm-6 no-padding-left xs-no-padding">
-                                                    <div class="form-group no-margin-bottom">
-                                                        <!-- label -->
-                                                        <label class="text-uppercase white-text">Adults</label>
-                                                        <!-- end label -->
-                                                        <!-- input -->
-                                                        <div class="select-style no-border no-margin-top margin-eight">
-                                                            <select>
-                                                                <option value="">01</option>
-                                                                <option value="">02</option>
-                                                                <option value="">03</option>
-                                                                <option value="">04</option>
-                                                            </select>
-                                                        </div>
-                                                        <!-- end input -->
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6 col-sm-6 no-padding-left">
-                                                    <button class="highlight-button-dark btn btn-medium  button xs-margin-bottom-five"><i class="fa fa-search"></i>Search</button>
-                                                </div>
-                                                <div class="col-md-6 col-sm-6 no-padding-left text-right xs-text-left">
-                                                    <a href="#" class="text-small text-uppercase white-text text-decoration-underline font-weight-600 margin-five display-inline-block">Advanced Search</a>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- end tab content -->
-                                <!-- tab content -->
-                                <div class="tab-pane fade in" id="tab3_sec3">
-                                    <div class="row margin-two no-margin-bottom">
-                                        <div class="col-md-8 col-sm-12 center-col">
-                                            <form action="#" method="post">
-                                                <div class="col-lg-4 col-md-6 col-sm-6 no-padding-left xs-no-padding">
-                                                    <div class="form-group no-margin-bottom">
-                                                        <!-- label -->
-                                                        <label class="text-uppercase white-text">From</label>
-                                                        <!-- end label -->
-                                                        <!-- input -->
-                                                        <input type="text" name="name" id="textbox7" placeholder="Eg. Melbourne, Australia">
-                                                        <!-- end input -->
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-md-6 col-sm-6 no-padding-left xs-no-padding">
-                                                    <div class="form-group no-margin-bottom">
-                                                        <!-- label -->
-                                                        <label class="text-uppercase white-text">To</label>
-                                                        <!-- end label -->
-                                                        <!-- input -->
-                                                        <input type="text" name="name" id="textbox8" placeholder="Eg. Europe">
-                                                        <!-- end input -->
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-md-6 col-sm-6 no-padding-left xs-no-padding">
-                                                    <div class="form-group no-margin-bottom">
-                                                        <!-- label -->
-                                                        <label class="text-uppercase white-text">Month</label>
-                                                        <!-- end label -->
-                                                        <!-- input -->
-                                                        <div class="select-style no-border no-margin-bottom xs-margin-bottom-three">
-                                                            <select>
-                                                                <option value="">Select Month</option>
-                                                                <option value="">January</option>
-                                                                <option value="">February </option>
-                                                                <option value="">March</option>
-                                                                <option value="">April</option>
-                                                                <option value="">May</option>
-                                                                <option value="">June</option>
-                                                            </select>
-                                                        </div>
-                                                        <!-- end input -->
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-2 col-md-6 col-sm-6 no-padding-left xs-no-padding">
-                                                    <div class="form-group no-margin-bottom">
-                                                        <!-- label -->
-                                                        <label class="text-uppercase white-text">Adults</label>
-                                                        <!-- end label -->
-                                                        <!-- input -->
-                                                        <div class="select-style no-border no-margin-top margin-eight">
-                                                            <select>
-                                                                <option value="">01</option>
-                                                                <option value="">02</option>
-                                                                <option value="">03</option>
-                                                                <option value="">04</option>
-                                                            </select>
-                                                        </div>
-                                                        <!-- end input -->
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6 col-sm-6 no-padding-left">
-                                                    <button class="highlight-button-dark btn btn-medium  button xs-margin-bottom-five"><i class="fa fa-search"></i>Search</button>
-                                                </div>
-                                                <div class="col-md-6 col-sm-6 no-padding-left text-right xs-text-left">
-                                                    <a href="#" class="text-small text-uppercase white-text text-decoration-underline font-weight-600 margin-five display-inline-block">Advanced Search</a>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- end tab content -->
-                                <!-- tab content -->
-                                <div class="tab-pane fade in" id="tab3_sec4">
-                                    <div class="row margin-two no-margin-bottom">
-                                        <div class="col-md-8 col-sm-12 center-col">
-                                            <form action="#" method="post">
-                                                <div class="col-lg-4 col-md-6 col-sm-6 no-padding-left xs-no-padding">
-                                                    <div class="form-group no-margin-bottom">
-                                                        <!-- label -->
-                                                        <label class="text-uppercase white-text">Origin</label>
-                                                        <!-- end label -->
-                                                        <!-- input -->
-                                                        <input type="text" name="name" id="textbox9" placeholder="Eg. Melbourne, Australia">
-                                                        <!-- end input -->
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-md-6 col-sm-6 no-padding-left xs-no-padding">
-                                                    <div class="form-group no-margin-bottom">
-                                                        <!-- label -->
-                                                        <label class="text-uppercase white-text">Destination</label>
-                                                        <!-- end label -->
-                                                        <!-- input -->
-                                                        <input type="text" name="name" id="textbox10" placeholder="MM/DD/YY">
-                                                        <!-- end input -->
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3 col-md-6 col-sm-6 no-padding-left xs-no-padding">
-                                                    <div class="form-group no-margin-bottom">
-                                                        <!-- label -->
-                                                        <label class="text-uppercase white-text">Return</label>
-                                                        <!-- end label -->
-                                                        <!-- input -->
-                                                        <input type="text" name="name" id="textbox11" placeholder="MM/DD/YY">
-                                                        <!-- end input -->
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-2 col-md-6 col-sm-6 no-padding-left xs-no-padding">
-                                                    <div class="form-group no-margin-bottom">
-                                                        <!-- label -->
-                                                        <label class="text-uppercase white-text">Cars</label>
-                                                        <!-- end label -->
-                                                        <!-- input -->
-                                                        <div class="select-style no-border no-margin-top margin-eight">
-                                                            <select>
-                                                                <option value="">01</option>
-                                                                <option value="">02</option>
-                                                                <option value="">03</option>
-                                                                <option value="">04</option>
-                                                            </select>
-                                                        </div>
-                                                        <!-- end input -->
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6 col-sm-6 no-padding-left">
-                                                    <button class="highlight-button-dark btn btn-medium  button xs-margin-bottom-five"><i class="fa fa-search"></i>Search</button>
-                                                </div>
-                                                <div class="col-md-6 col-sm-6 no-padding-left text-right xs-text-left">
-                                                    <a href="#" class="text-small text-uppercase white-text text-decoration-underline font-weight-600 margin-five display-inline-block">Advanced Search</a>
-                                                </div>
+                                <!-- end input -->
+                                            
                                             </form>
                                         </div>
                                     </div>
@@ -327,5 +124,4 @@
                 </div>
             </div>
         </section>
-
     </body>
