@@ -1,0 +1,47 @@
+extends layout
+
+block content
+
+  form(action="/add_hike", method="post")
+    table(border="1")
+      tr
+        td Name
+        td
+          input(name="name", type="text")
+      tr
+        td Location
+        td
+          input(name="location", type="text")
+      tr
+        td Distance
+        td
+          input(name="distance", type="text")
+      tr
+        td Weather
+        td
+          input(name="weather", type="radio", value="Good", checked)
+          | Good
+          input(name="weather", type="radio", value="Hot")
+          | Hot
+          input(name="weather", type="radio", value="Cold")
+          | Cold
+      tr
+        td(colspan="1")
+          input(type="submit", value="Record")
+
+  div
+    h3 Records
+    table(border="1")
+      tr
+        td Date
+        td Name
+        td Location
+        td Distance
+        td Weather
+      each hike in hikes
+        tr
+          td #{hike.HIKE_DATE.toDateString()}
+          td #{hike.NAME}
+          td #{hike.LOCATION}
+          td #{hike.DISTANCE}
+          td #{hike.WEATHER}

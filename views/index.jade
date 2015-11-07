@@ -1,0 +1,33 @@
+extends layout
+
+block extra-head
+
+	link(rel='stylesheet', href='/stylesheets/cover.css')
+
+block content
+
+	.site-wrapper
+		.site-wrapper-inner
+			img.logo(src='../public/images/aerofs-white.png')
+			.cover-container
+				.inner.cover
+					.title Sign In
+					.form-group
+						input#login-email.form-control.input-lg(type='email', style='border-radius: 0px; box-shadow: none;', placeholder='Email address')
+					.form-group
+						input#login-password.form-control.input-lg(type='password', style='border-radius: 0px; box-shadow: none;', placeholder='Password')
+					div(style='height: 50px;')
+						.remember-device
+							label
+								input(type='checkbox')
+								|	Remember this device
+						.forgot-password
+							a(href='#') Forgot password?
+					p
+						a.btn.btn-primary.btn-lg.btn-block(href='#')
+							span.glyphicon.glyphicon-lock
+							|	Sign In Securely
+			br
+			div
+				| Don't have AeroFS? 
+				a(href='#') Sign up here.
