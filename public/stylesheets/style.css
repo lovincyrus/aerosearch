@@ -228,6 +228,10 @@ i { color: #9a9a9a; margin: 0 3px}
     Custom
 ====================================== */
 
+.cal-price { color: white; font-size: 40px; padding-top: 1.2em; padding-left: 1em; }
+.cal-price a { color: white; }
+.logo { background-image: url('/images/logo-white.png'); background-size: 15% auto; background-repeat: no-repeat; margin-left: 3em; margin-top: 1.8em; }
+.search-btn { position: absolute; padding: 5px 20px 6px !important; margin-left: 2%;}
 .center-col{ float:none !important; margin-left:auto !important; margin-right:auto !important}
 /* separator */
 .separator-line { height: 2px; margin: 0 auto; width: 30px; margin:7% auto}
@@ -739,7 +743,7 @@ footer ul.list-inline li:first-child {padding-left: 6px}
 
 .overlay{ position: absolute; height: 100%; width: 100%; opacity: 0.2; z-index: 1; top: 0px; }
 .parallax-fix{ position: relative; background-size: cover !important; overflow: hidden; background-position: center center; background-repeat: no-repeat !important; transition-duration: .2s; -moz-transition-duration: .2s; -webkit-transition-duration: .2s; -o-transition-duration: .2s; transition-timing-function: ease-in; -moz-transition-timing-function: ease-in; -webkit-transition-timing-function: ease-in; -o-transition-timing-function: ease-in; background-attachment: fixed !important }
-.parallax-fix .row{ position: relative; z-index: 2; }
+.parallax-fix .row{ position: relative; z-index: 99999; }
 .parallax-section-main { /* min-height: 700px; */ }
 .parallax-title { display: block; font-family: "Oswald",sans-serif; font-size: 15px; font-weight: 100; letter-spacing: 7px; margin-bottom: 30px; text-transform: uppercase; }
 .parallax-sub-title{  display: block; font-size: 22px; font-weight: 600; letter-spacing: 4px; line-height: 30px; text-transform: uppercase; }

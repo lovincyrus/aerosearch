@@ -1,88 +1,103 @@
-<!doctype html>
-<html class="no-js" lang="en">
-    <head>
-        <title>AeroSearch</title>
-        <meta name="description" content="">
-        <meta name="keywords" content="">
-        <meta charset="utf-8f        <meta name="author" content="ThemeZaa">
-        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1" />
-        <!-- favicon -->
-        <link rel="shortcut icon" href="images/favicon.png">
-        <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
-        <!-- animation --> 
-        <link rel="stylesheet" href="../public/stylesheets/animate.css" />
-        <!-- bootstrap --> 
-        <link rel="stylesheet" href="../public/stylesheets/bootstrap.css" />
-        <!-- et line icon --> 
-        <link rel="stylesheet" href="../public/stylesheets/et-line-icons.css" />
-        <!-- font-awesome icon -->
-        <link rel="stylesheet" href="../public/stylesheets/font-awesome.min.css" />
-        <!-- revolution slider -->
-        <link rel="stylesheet" href="../public/stylesheets/extralayers.css" />
-        <link rel="stylesheet" href="../public/stylesheets/settings.css" />
-        <!-- magnific popup -->
-        <link rel="stylesheet" href="../public/stylesheets/magnific-popup.css" />
-        <!-- owl carousel -->
-        <link rel="stylesheet" href="../public/stylesheets/owl.carousel.css" />
-        <link rel="stylesheet" href="../public/stylesheets/owl.transitions.css" />
-        <link rel="stylesheet" href="../public/stylesheets/full-slider.css" />
-        <!-- text animation -->
-        <link rel="stylesheet" href="../public/stylesheets/text-effect.css" />
-        <!-- common -->
-        <link rel="stylesheet" href="../public/stylesheets/style.css" />
-        <!-- responsive -->
-        <link rel="stylesheet" href="../public/stylesheets/responsive.css" />
-        <!--[if IE]>
-            <link rel="stylesheet" href="../public/stylesheets/style-ie.css" />
-        <![endif]-->
-        <!--[if IE]>
-            <script src="js/html5shiv.js"></script>
-        <![endif]-->
-    </head>
-    <body>
-        <!-- navigation panel -->
-        <nav class="navbar navbar-default navbar-fixed-top nav-transparent overlay-nav sticky-nav nav-border-bottom nav-white" role="navigation">
-            <div class="container">
-                <div class="row">
-                    <!-- logo -->
-                    <div class="col-md-2 pull-left"><a class="logo-light" href="index.html"><img alt="" src="images/logo-white.png" class="logo" /></a><a class="logo-dark" href="index.html"><img alt="" src="images/logo-light.png" class="logo" /></a></div>
-                    <!-- end logo -->
+<!DOCTYPE html>
+<html lang="en" ng-app="AeroSearch" class="no-js">
+  <head>
+    <title>AeroSearch</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta charset="utf-8f        &lt;meta name=" content="ThemeZaa">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <!-- favicon-->
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    <!-- animation-->
+    <link rel="stylesheet" href="/stylesheets/animate.css">
+    <!-- bootstrap-->
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+    <!-- et line icon-->
+    <link rel="stylesheet" href="/stylesheets/et-line-icons.css">
+    <!-- font-awesome icon-->
+    <link rel="stylesheet" href="/stylesheets/font-awesome.min.css">
+    <!-- revolution slider-->
+    <link rel="stylesheet" href="/stylesheets/extralayers.css">
+    <link rel="stylesheet" href="/stylesheets/settings.css">
+    <!-- magnific popup-->
+    <link rel="stylesheet" href="/stylesheets/magnific-popup.css">
+    <!-- owl carousel-->
+    <link rel="stylesheet" href="/stylesheets/owl.carousel.css">
+    <link rel="stylesheet" href="/stylesheets/owl.transitions.css">
+    <link rel="stylesheet" href="/stylesheets/full-slider.css">
+    <!-- text animation-->
+    <link rel="stylesheet" href="/stylesheets/text-effect.css">
+    <!-- common-->
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <!-- responsive-->
+    <link rel="stylesheet" href="/stylesheets/responsive.css">
+    <script src="/js/jquery.js"></script>
+    <!--if IElink(rel='stylesheet', href='/stylesheets/style-ie.css')
+    -->
+    <!--if IEscript(src='js/html5shiv.js')
+    -->
+  </head>
+  <body ng-controller="SearchCtrl">
+    <!-- navigation panel-->
+    <nav role="navigation" class="navbar navbar-default navbar-fixed-top nav-transparent overlay-nav sticky-nav nav-border-bottom nav-white">
+      <div class="container">
+        <div class="row">
+          <!-- logo-->
+          <div class="col-md-2 pull-left"><a href="index.html" class="logo-light"><img alt="" src="images/logo-white.png" class="logo"></a><a href="index.html" class="logo-dark"><img alt="" src="images/logo-light.png" class="logo"></a></div>
+          <!-- end logo-->
+        </div>
+      </div>
+    </nav>
+    <!-- end navigation panel-->
+    <section style="background: url(/images/bg.jpg) 50%" class="parallax2 parallax-fix no-padding scroll-to-down-white full-width-image">
+      <div class="container position-relative">
+        <div class="slider-typography text-center">
+          <div class="slider-text-middle-main">
+            <div class="slider-text-bottom padding-left-right-px animated fadeInUp"><span class="owl-subtitle white-text">Are you going to</span>
+              <div class="separator-line-thick bg-yellow margin-three"></div><span class="owl-title white-text center-col margin-ten no-margin-top"></span>
+              <section style="visibility: visible; -webkit-animation: fadeIn;" class="button-style wow fadeIn animated no-padding">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-7 col-sm-10 center-col text-center"></div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 center-col text-center"><a href="javascript:void(0)" onclick="forward();" class="highlight-button btn btn-large button xs-margin-bottom-five">Yes</a><a href="#" class="highlight-button btn btn-large button xs-margin-bottom-five">No</a></div>
+                  </div>
                 </div>
+              </section>
             </div>
-        </nav>
-        <!--end navigation panel --> 
-
-<section class="parallax2 parallax-fix no-padding scroll-to-down-white full-width-image owl-half-slider" onclick="scrollToDownSection()" style="background: url(http://placehold.it/1920x1100) 50% -120px;">
-            
-            <div class="opacity-light bg-black"></div>
-            <div class="container position-relative">
-                <div class="slider-typography text-center">
-                    <div class="slider-text-middle-main">
-                        <div class="slider-text-bottom padding-left-right-px animated fadeInUp">
-                            <span class="owl-subtitle white-text">Are you going to</span>
-                            <div class="separator-line-thick bg-yellow margin-three"></div>
-                            <span class="owl-title white-text center-col margin-ten no-margin-top">Las Vegas?</span>
-                            <section class="button-style wow fadeIn animated" style="visibility: visible; -webkit-animation: fadeIn;">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-7 col-sm-10 center-col text-center">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 col-sm-12 center-col text-center">
-                        <a href="#" class="highlight-button btn btn-large button xs-margin-bottom-five">Yes</a>
-                        <a href="#" class="highlight-button btn btn-large button xs-margin-bottom-five">No</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <iframe id="frame" src=""></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </body>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      window.onload = function() {
+        var startPos;
+        navigator.geolocation.getCurrentPosition(function(position) {
+          console.log(position.coords.latitude);
+          console.log(position.coords.longitude);
+          var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + position.coords.latitude + "," + position.coords.longitude + "&key=AIzaSyBR2eQQUQK7odXQqmyatn1uQEeV1DM8lAg&result_type=locality",
+            "method": "GET",
+            "headers": {
+              "cache-control": "no-cache",
+              "postman-token": "3487b140-b7f3-ad2d-e9f1-9b329bd83182"
+            }
+          }
+          $.ajax(settings).done(function (response) {
+            console.log(response);
+          });
+        });
+      };
+      function forward() {
+        console.log('test');
+      }
+    </script>
+  </body>
+</html>

@@ -45,15 +45,15 @@ html.no-js(lang='en', ng-app='AeroSearch')
       if IEscript(src='js/html5shiv.js')
   body(ng-controller='SearchCtrl')
     // navigation panel
-    nav.navbar.navbar-default.navbar-fixed-top.nav-transparent.overlay-nav.sticky-nav.nav-border-bottom.nav-white(role='navigation')
+    nav.navbar.logo.navbar-default.navbar-fixed-top.nav-transparent.overlay-nav.sticky-nav.nav-border-bottom.nav-white(role='navigation')
       .container
         .row
           // logo
-          .col-md-2.pull-left
-            a.logo-light(href='index.html')
-              img.logo(alt='', src='/images/logo-white.png')
-            a.logo-dark(href='index.html')
-              img.logo(alt='', src='/images/logo-light.png')
+          //- .col-md-2.pull-left
+          //-   a.logo-light(href='index.html')
+          //-     img.logo(alt='', src='/images/logo-white.png')
+          //-   a.logo-dark(href='index.html')
+          //-     img.logo(alt='', src='/images/logo-light.png')
           // end logo
     // end navigation panel
     section.parallax2.parallax-fix.no-padding.scroll-to-down-white.full-width-image(onclick='scrollToDownSection()', style='background: url(/images/bg.jpg) 50%')
@@ -73,20 +73,164 @@ html.no-js(lang='en', ng-app='AeroSearch')
                           .col-md-6.col-sm-6.no-padding-left.xs-no-padding
                             .form-group.no-margin-bottom
                               // input
-                              input#textbox1(type='text', name='name', placeholder='Eg. San Francisco, CA')
+                              input#textbox1(type='text', name='name', placeholder!='#{originating}')
                               // end input
                           .col-md-6.col-sm-6.no-padding-left.xs-no-padding
                             .form-group.no-margin-bottom
                               // input
-                              input#textbox2(type='text', name='name', placeholder='Eg. Kuala Lumpur, Malaysia')
+                              input#textbox2(type='text', name='name', placeholder='#{destination}')
                               // end input
+                          button.search-btn.highlight-button-dark.btn.btn-medium.button.xs-margin-bottom-five(onclick='loadModal();')
+                              script.stripe-button(src='https://checkout.stripe.com/checkout.js', data-key='pk_test_IGeHwBqs4a6XtWWqH4mRw81O', data-amount='15000', data-name='Emirates', data-description='One-way flight ($150.00)', data-image='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emirates_logo.svg/2000px-Emirates_logo.svg.png', data-locale='auto')
                   // end tab content
                 // end tab content section
       // end tab section
-      #calendar
+      
+      #calendar.cal-context(style='width: 100%;')
+        .cal-row-fluid.cal-row-head
+          .cal-cell1 Sunday
+          .cal-cell1 Monday
+          .cal-cell1 Tuesday
+          .cal-cell1 Wednesday
+          .cal-cell1 Thursday
+          .cal-cell1 Friday
+          .cal-cell1 Saturday
+        .cal-month-box
+          .cal-row-fluid.cal-before-eventlist
+            .cal-cell1.cal-cell(data-cal-row='-day1')
+              .cal-month-day.cal-day-inmonth.cal-day-weekend
+                span.pull-right(data-cal-date='2015-11-01', data-cal-view='day', data-toggle='tooltip', title='') Nov 1
+            .cal-cell1.cal-cell(data-cal-row='-day2')
+              .cal-month-day.cal-day-inmonth
+                span.pull-right(data-cal-date='2015-11-02', data-cal-view='day', data-toggle='tooltip', title='') 2
+            .cal-cell1.cal-cell(data-cal-row='-day3')
+              .cal-month-day.cal-day-inmonth
+                span.pull-right(data-cal-date='2015-11-03', data-cal-view='day', data-toggle='tooltip', title='') 3
+            .cal-cell1.cal-cell(data-cal-row='-day4')
+              .cal-month-day.cal-day-inmonth
+                span.pull-right(data-cal-date='2015-11-04', data-cal-view='day', data-toggle='tooltip', title='') 4
+            .cal-cell1.cal-cell(data-cal-row='-day5')
+              .cal-month-day.cal-day-inmonth
+                span.pull-right(data-cal-date='2015-11-05', data-cal-view='day', data-toggle='tooltip', title='') 5
+            .cal-cell1.cal-cell(data-cal-row='-day6')
+              .cal-month-day.cal-day-inmonth
+                span.pull-right(data-cal-date='2015-11-06', data-cal-view='day', data-toggle='tooltip', title='') 6
+            .cal-cell1.cal-cell(data-cal-row='-day7')
+              .cal-month-day.cal-day-inmonth.cal-day-weekend
+                span.pull-right(data-cal-date='2015-11-07', data-cal-view='day', data-toggle='tooltip', title='') 7
+          .cal-row-fluid.cal-before-eventlist
+            .cal-cell1.cal-cell(data-cal-row='-day1')
+              .cal-month-day.cal-day-inmonth.cal-day-today.cal-day-weekend
+                span.pull-right(data-cal-date='2015-11-08', data-cal-view='day', data-toggle='tooltip', title='') 8
+                #price1.cal-price
+                  a(href="javascript:void(0)" onclick="selectDate(this.id);") $150
+            .cal-cell1.cal-cell(data-cal-row='-day2')
+              .cal-month-day.cal-day-inmonth
+                span.pull-right(data-cal-date='2015-11-09', data-cal-view='day', data-toggle='tooltip', title='') 9
+                #price2.cal-price $151
+            .cal-cell1.cal-cell(data-cal-row='-day3')
+              .cal-month-day.cal-day-inmonth
+                span.pull-right(data-cal-date='2015-11-10', data-cal-view='day', data-toggle='tooltip', title='') 10
+                #price2.cal-price $161
+            .cal-cell1.cal-cell(data-cal-row='-day4')
+              .cal-month-day.cal-day-inmonth.cal-day-holiday
+                span.pull-right(data-cal-date='2015-11-11', data-cal-view='day', data-toggle='tooltip', title='Veterans Day') 11
+                #price3.cal-price $168
+            .cal-cell1.cal-cell(data-cal-row='-day5')
+              .cal-month-day.cal-day-inmonth
+                span.pull-right(data-cal-date='2015-11-12', data-cal-view='day', data-toggle='tooltip', title='') 12
+                #price4.cal-price $170
+            .cal-cell1.cal-cell(data-cal-row='-day6')
+              .cal-month-day.cal-day-inmonth
+                span.pull-right(data-cal-date='2015-11-13', data-cal-view='day', data-toggle='tooltip', title='') 13
+                #price5.cal-price $172
+            .cal-cell1.cal-cell(data-cal-row='-day7')
+              .cal-month-day.cal-day-inmonth.cal-day-weekend
+                span.pull-right(data-cal-date='2015-11-14', data-cal-view='day', data-toggle='tooltip', title='') 14
+                #price6.cal-price $179
+          .cal-row-fluid.cal-before-eventlist
+            .cal-cell1.cal-cell(data-cal-row='-day1')
+              .cal-month-day.cal-day-inmonth.cal-day-weekend
+                span.pull-right(data-cal-date='2015-11-15', data-cal-view='day', data-toggle='tooltip', title='') 15
+                .cal-price $181
+            .cal-cell1.cal-cell(data-cal-row='-day2')
+              .cal-month-day.cal-day-inmonth
+                span.pull-right(data-cal-date='2015-11-16', data-cal-view='day', data-toggle='tooltip', title='') 16
+                .cal-price $180
+            .cal-cell1.cal-cell(data-cal-row='-day3')
+              .cal-month-day.cal-day-inmonth
+                span.pull-right(data-cal-date='2015-11-17', data-cal-view='day', data-toggle='tooltip', title='') 17
+                .cal-price $175
+            .cal-cell1.cal-cell(data-cal-row='-day4')
+              .cal-month-day.cal-day-inmonth
+                span.pull-right(data-cal-date='2015-11-18', data-cal-view='day', data-toggle='tooltip', title='') 18
+                .cal-price $160
+            .cal-cell1.cal-cell(data-cal-row='-day5')
+              .cal-month-day.cal-day-inmonth
+                span.pull-right(data-cal-date='2015-11-19', data-cal-view='day', data-toggle='tooltip', title='') 19
+                .cal-price $180
+            .cal-cell1.cal-cell(data-cal-row='-day6')
+              .cal-month-day.cal-day-inmonth
+                span.pull-right(data-cal-date='2015-11-20', data-cal-view='day', data-toggle='tooltip', title='') 20
+                .cal-price $185
+            .cal-cell1.cal-cell(data-cal-row='-day7')
+              .cal-month-day.cal-day-inmonth.cal-day-weekend
+                span.pull-right(data-cal-date='2015-11-21', data-cal-view='day', data-toggle='tooltip', title='') 21
+                .cal-price $175
+          .cal-row-fluid.cal-before-eventlist
+            .cal-cell1.cal-cell(data-cal-row='-day1')
+              .cal-month-day.cal-day-inmonth.cal-day-weekend
+                span.pull-right(data-cal-date='2015-11-22', data-cal-view='day', data-toggle='tooltip', title='') 22
+                .cal-price $191
+            .cal-cell1.cal-cell(data-cal-row='-day2')
+              .cal-month-day.cal-day-inmonth
+                span.pull-right(data-cal-date='2015-11-23', data-cal-view='day', data-toggle='tooltip', title='') 23
+                .cal-price $170
+            .cal-cell1.cal-cell(data-cal-row='-day3')
+              .cal-month-day.cal-day-inmonth
+                span.pull-right(data-cal-date='2015-11-24', data-cal-view='day', data-toggle='tooltip', title='') 24
+                .cal-price $165
+            .cal-cell1.cal-cell(data-cal-row='-day4')
+              .cal-month-day.cal-day-inmonth
+                span.pull-right(data-cal-date='2015-11-25', data-cal-view='day', data-toggle='tooltip', title='') 25
+                .cal-price $160
+            .cal-cell1.cal-cell(data-cal-row='-day5')
+              .cal-month-day.cal-day-inmonth.cal-day-holiday
+                span.pull-right(data-cal-date='2015-11-26', data-cal-view='day', data-toggle='tooltip', title='Thanksgiving Day') 26
+                .cal-price $175
+            .cal-cell1.cal-cell(data-cal-row='-day6')
+              .cal-month-day.cal-day-inmonth
+                span.pull-right(data-cal-date='2015-11-27', data-cal-view='day', data-toggle='tooltip', title='') 27
+                .cal-price $170
+            .cal-cell1.cal-cell(data-cal-row='-day7')
+              .cal-month-day.cal-day-inmonth.cal-day-weekend
+                span.pull-right(data-cal-date='2015-11-28', data-cal-view='day', data-toggle='tooltip', title='') 28
+                .cal-price $165
+          .cal-row-fluid.cal-before-eventlist
+            .cal-cell1.cal-cell(data-cal-row='-day1')
+              .cal-month-day.cal-day-inmonth.cal-day-weekend
+                span.pull-right(data-cal-date='2015-11-29', data-cal-view='day', data-toggle='tooltip', title='') 29
+                .cal-price $180
+            .cal-cell1.cal-cell(data-cal-row='-day2')
+              .cal-month-day.cal-day-inmonth
+                span.pull-right(data-cal-date='2015-11-30', data-cal-view='day', data-toggle='tooltip', title='') 30
+                .cal-price $185
+            .cal-cell1.cal-cell(data-cal-row='-day3')
+              .cal-month-day.cal-day-outmonth
+                span.pull-right(data-cal-date='2015-12-01', data-cal-view='day', data-toggle='tooltip', title='') 1
+            .cal-cell1.cal-cell(data-cal-row='-day4')
+              .cal-month-day.cal-day-outmonth
+                span.pull-right(data-cal-date='2015-12-02', data-cal-view='day', data-toggle='tooltip', title='') 2
+            .cal-cell1.cal-cell(data-cal-row='-day5')
+              .cal-month-day.cal-day-outmonth
+                span.pull-right(data-cal-date='2015-12-03', data-cal-view='day', data-toggle='tooltip', title='') 3
+            .cal-cell1.cal-cell(data-cal-row='-day6')
+              .cal-month-day.cal-day-outmonth
+                span.pull-right(data-cal-date='2015-12-04', data-cal-view='day', data-toggle='tooltip', title='') 4
+            .cal-cell1.cal-cell(data-cal-row='-day7')
+              .cal-month-day.cal-day-outmonth.cal-day-weekend
+                span.pull-right(data-cal-date='2015-12-05', data-cal-view='day', data-toggle='tooltip', title='') 5
     script(type='text/javascript').
-      var calendar = $("#calendar").calendar(
-      {
-      tmpl_path: "/tmpls/",
-      events_source: function () { return []; }
-      });
+      function selectDate(id) {
+        console.log(document.getElementById(#id).value);
+      }
