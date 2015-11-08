@@ -412,7 +412,7 @@ nav .container{ display: table-cell; vertical-align: middle; height: 80px; posit
 .shrink-nav .container { height: 60px; }
 .shrink-nav { background-color:#FFF; }
 .sticky-nav{ position: fixed; top: 0px; display: inline-table;}
-.logo { max-width: 109px; }
+/*.logo { max-width: 109px; }*/
 .logo-style-2 { max-width: 177px; }
 .logo-style-3 { max-width: 210px; }
 .sticky-nav .logo-light { height: 55px; vertical-align: middle; display: table-cell;}
@@ -664,7 +664,7 @@ footer ul.list-inline li:first-child {padding-left: 6px}
 .owl-page.active span { background: none repeat scroll 0 0 transparent; border: 1px solid rgba(255, 255, 255, 0.8); transform: scale(1.33333); }
 .owl-bg-img { background-position: center center; background-repeat: no-repeat; background-size: cover; display: block; overflow: hidden; position: relative; width: 100%; }
 .owl-subtitle { font-size: 40px; letter-spacing: 0px; text-transform: uppercase; font-weight: 400; line-height: 80px; display:block}
-.owl-title { font-size: 100px; font-weight: 600; text-transform: uppercase; display: block; letter-spacing: 7px;}
+.owl-title { font-size: 60px; font-weight: 600; text-transform: uppercase; display: block; letter-spacing: 7px;}
 .owl-title-big { background: rgba(0, 0, 0, 0.5); display: inline-block; font-size: 25px; font-weight: 600; letter-spacing: 7px; line-height: 40px; padding: 35px 50px; text-transform: uppercase; width: 60% }
 .dark-pagination .owl-page span { background: none repeat scroll 0 0 rgba(0, 0, 0, 1); box-shadow: none }
 .dark-pagination .owl-page.active span {background:transparent; border: 1px solid rgba(0, 0, 0, 1); }
@@ -710,7 +710,7 @@ footer ul.list-inline li:first-child {padding-left: 6px}
     Slider and parallax typography
 ====================================== */
 
-.slider-text-middle-main { display: table; height: 100%; width: 100% }
+.slider-text-middle-main { display: table; height: 100%; width: 100%; margin-top: 13%; }
 .slider-text-bottom { display: table-cell; vertical-align: bottom; }
 .slider-text-top { display: table-cell; vertical-align: top; }
 .slider-text-middle { display: table-cell; vertical-align: middle; }
@@ -913,7 +913,7 @@ footer ul.list-inline li:first-child {padding-left: 6px}
     Full width image
 ====================================== */
 
-.full-width-image { min-height: 600px;}
+.full-width-image { min-height: 100%;}
 
 /* ===================================
     Blog
@@ -1273,8 +1273,8 @@ figure:hover img { -ms-transform: scale(1.1,1.1); -webkit-transform: scale(1.1,1
 .btn.btn-small { font-size: 11px; padding: 2px 14px; letter-spacing:1px}
 .btn.btn-very-small {font-size: 9px; padding: 1px 12px; letter-spacing:1px}
 
-.highlight-button { border:2px solid #000; display: inline-block; padding: 8px 20px 9px; font-size: 12px; color:#000; }
-.highlight-button:hover { background-color: #000; border: 2px solid #000; color:#fff}
+.highlight-button { border:2px solid #fff; display: inline-block; padding: 8px 20px 9px; font-size: 12px; color:#fff; }
+.highlight-button:hover { background-color: #fff; border: 2px solid #fff; color:#000}
 .highlight-button i { color: #000}
 .highlight-button:hover i {color:#fff}
 

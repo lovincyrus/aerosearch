@@ -1,6 +1,6 @@
 var express = require('express');
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-//var http = require("http");
+var cheerio = require('cheerio');
 var router = express.Router();
 
 /* GET home page. */
@@ -16,6 +16,7 @@ router.get('/confirm/', function(req, res, next) {
 	var imageSearchURL = 'https://www.google.com/searchbyimage?hl=en&image_url='+ _url;
 	
 	var data = null;
+	var response = 'test';
 
 	var xhr = new XMLHttpRequest();
 	xhr.withCredentials = true;
@@ -23,11 +24,18 @@ router.get('/confirm/', function(req, res, next) {
 	xhr.addEventListener("readystatechange", function () {
 	  if (this.readyState === this.DONE) {
 	    //console.log(this.responseText);
-	    var response = this.responseText;
+	    response = this.responseText;
 	    response = response.substring(response.indexOf('<a class="_gUb"'));
 	    response = response.substring(response.indexOf('>') + 1);
 	    response = response.substring(0, response.indexOf("</a>"));
 	    console.log(response);
+
+	    var displayLocation = response + '?';
+
+	    res.render('confirm', {
+			title: 'AeroSearch',
+			location: displayLocation
+		});
 	  }
 	});
 
@@ -38,9 +46,7 @@ router.get('/confirm/', function(req, res, next) {
 
 	xhr.send(data);
 
-	res.render('confirm', {
-		title: 'AeroSearch'
-	});
+	
 });
 
 module.exports = router;
