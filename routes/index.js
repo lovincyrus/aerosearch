@@ -8,4 +8,11 @@ router.get('/', function(req, res, next) {
   });
 });
 
+/* GET home page. */
+router.get('/payment', function(req, res, next) {
+  res.render('checkout', {
+  	title: 'Stripe Checkout Form'
+  });
+});
+
 module.exports = router;
