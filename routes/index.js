@@ -30,7 +30,7 @@ router.get('/confirm/', function(req, res, next) {
 	    response = response.substring(0, response.indexOf("</a>"));
 	    console.log(response);
 
-	    var displayLocation = response + '?';
+	    var displayLocation = response;
 
 	    res.render('confirm', {
 			title: 'AeroSearch',
@@ -50,8 +50,12 @@ router.get('/confirm/', function(req, res, next) {
 });
 
 router.get('/result/', function(req, res, next) {
+	var _originatingCity = req.param('ori');
+	var _destinationCity = req.param('des');
 	res.render('result', {
-		title: 'AeroSearch'
+		title: 'AeroSearch',
+		originating: _originatingCity,
+		destination: _destinationCity
 	});
 });
 
