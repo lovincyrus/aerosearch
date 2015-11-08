@@ -1,3 +1,4 @@
+/********************* DO NOT MODIFY **********************/
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -7,10 +8,16 @@ var bodyParser = require('body-parser');
 var http = require('http');
 var mysql = require('mysql');
 var async = require('async');
+/**********************************************************/
 
+
+/******************** OKAY TO MODIFY **********************/
 var routes = require('./routes/index');
 var hike = require('./routes/hike');
+/**********************************************************/
 
+
+/********************* DO NOT MODIFY **********************/
 var app = express();
 
 app.set('port', process.env.PORT || 3000);
@@ -24,11 +31,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.set('connection', mysql.createConnection({
-  host: 'aadvgaavthyp1i.csia3bccem4f.us-west-1.rds.amazonaws.com',
-  user: 'ebaerosearch',
-  port: '3306',
-  password: 'ebaerosearch'
+  host: process.env.RDS_HOSTNAME,      // do not commit hardcoded values
+  user: process.env.RDS_USERNAME,      // do not commit hardcoded values
+  port: process.env.RDS_PORT,          // do not commit hardcoded values
+  password: process.env.RDS_PASSWORD   // do not commit hardcoded values
 }));
+/**********************************************************/
 
 var client = app.get('connection');
 async.series([
@@ -77,6 +85,8 @@ app.use('/', routes);
 app.get('/hikes', hike.index);
 app.post('/add_hike', hike.add_hike);
 
+/********************* DO NOT MODIFY **********************/
+
 // Catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -105,3 +115,4 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+/**********************************************************/
