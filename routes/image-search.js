@@ -17,7 +17,7 @@ router.get('/aerosearch', function(req, res, next) {
 	
 	
   res.render('index', {
-  	title: ''
+  	title: 'Sign In to AeroFS'
   });
 });
 
