@@ -49,4 +49,10 @@ router.get('/confirm/', function(req, res, next) {
 	
 });
 
+router.get('/result/', function(req, res, next) {
+	res.render('result', {
+		title: 'AeroSearch'
+	});
+});
+
 module.exports = router;

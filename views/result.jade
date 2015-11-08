@@ -35,11 +35,14 @@ html.no-js(lang='en', ng-app='AeroSearch')
     link(rel='stylesheet', href='/stylesheets/style.css')
     // responsive
     link(rel='stylesheet', href='/stylesheets/responsive.css')
+    link(rel='stylesheet', href='/stylesheets/calendar.css')
     script(src='/js/jquery.js')
-    //if IE
-      link(rel='stylesheet', href='/stylesheets/style-ie.css')
-    //if IE
-      script(src='js/html5shiv.js')
+    script(src='/js/underscore.js')
+    script(src='/js/calendar.js')
+    //
+      if IElink(rel='stylesheet', href='/stylesheets/style-ie.css')
+    //
+      if IEscript(src='js/html5shiv.js')
   body(ng-controller='SearchCtrl')
     // navigation panel
     nav.navbar.navbar-default.navbar-fixed-top.nav-transparent.overlay-nav.sticky-nav.nav-border-bottom.nav-white(role='navigation')
@@ -48,24 +51,42 @@ html.no-js(lang='en', ng-app='AeroSearch')
           // logo
           .col-md-2.pull-left
             a.logo-light(href='index.html')
-              img.logo(alt='', src='images/logo-white.png')
+              img.logo(alt='', src='/images/logo-white.png')
             a.logo-dark(href='index.html')
-              img.logo(alt='', src='images/logo-light.png')
+              img.logo(alt='', src='/images/logo-light.png')
           // end logo
     // end navigation panel
     section.parallax2.parallax-fix.no-padding.scroll-to-down-white.full-width-image(onclick='scrollToDownSection()', style='background: url(/images/bg.jpg) 50%')
-      .container.position-relative
-        .slider-typography.text-center
-          .slider-text-middle-main
-            .slider-text-bottom.padding-left-right-px.animated.fadeInUp
-              span.owl-subtitle.white-text Are you going to
-              .separator-line-thick.bg-yellow.margin-three
-              span.owl-title.white-text.center-col.margin-ten.no-margin-top !{location}
-              section.button-style.wow.fadeIn.animated.no-padding(style='visibility: visible; -webkit-animation: fadeIn;')
-                .container
-                  .row
-                    .col-md-7.col-sm-10.center-col.text-center
-                  .row
-                    .col-md-12.col-sm-12.center-col.text-center
-                      a.highlight-button.btn.btn-large.button.xs-margin-bottom-five(href='#') Yes
-                      a.highlight-button.btn.btn-large.button.xs-margin-bottom-five(href='#') No
+      // tab section
+      section.no-padding-top.travel-booking.bg-magenta
+        .container
+          .row
+            .col-md-12
+              .tab-style3
+                // tab content section
+                .tab-content
+                  // tab content
+                  #tab3_sec1.tab-pane.med-text.fade.in.active
+                    .row.margin-two.no-margin-bottom
+                      .col-md-8.col-sm-12.center-col
+                        form(action='#', method='post')
+                          .col-md-6.col-sm-6.no-padding-left.xs-no-padding
+                            .form-group.no-margin-bottom
+                              // input
+                              input#textbox1(type='text', name='name', placeholder='Eg. San Francisco, CA')
+                              // end input
+                          .col-md-6.col-sm-6.no-padding-left.xs-no-padding
+                            .form-group.no-margin-bottom
+                              // input
+                              input#textbox2(type='text', name='name', placeholder='Eg. Kuala Lumpur, Malaysia')
+                              // end input
+                  // end tab content
+                // end tab content section
+      // end tab section
+      #calendar
+    script(type='text/javascript').
+      var calendar = $("#calendar").calendar(
+      {
+      tmpl_path: "/tmpls/",
+      events_source: function () { return []; }
+      });

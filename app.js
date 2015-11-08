@@ -31,47 +31,47 @@ app.set('connection', mysql.createConnection({
 }));
 
 var client = app.get('connection');
-async.series([
-  function connect(callback) {
-    client.connect(callback);
-  },
-  function clear(callback) {
-    client.query('DROP DATABASE IF EXISTS mynode_db', callback);
-  },
-  function create_db(callback) {
-    client.query('CREATE DATABASE mynode_db', callback);
-  },
-  function use_db(callback) {
-    client.query('USE mynode_db', callback);
-  },
-  function create_table(callback) {
-     client.query('CREATE TABLE HIKES (' +
-                         'ID VARCHAR(40), ' +
-                         'HIKE_DATE DATE, ' +
-                         'NAME VARCHAR(40), ' +
-                         'DISTANCE VARCHAR(40), ' +
-                         'LOCATION VARCHAR(40), ' +
-                         'WEATHER VARCHAR(40), ' +
-                         'PRIMARY KEY(ID))', callback);
-  },
-  function insert(callback) {
-    var hike = {
-      HIKE_DATE: new Date(),
-      NAME: 'Someone',
-      LOCATION: 'Glacier Point, Yosemite',
-      DISTANCE: '7,000 ft',
-      WEATHER:'Cold'
-    };
-    client.query('INSERT INTO HIKES set ?', hike, callback);
-  }
-], function (err, results) {
-  if (err) {
-    // Exception initializing database
-    throw err;
-  } else {
-    // Database initialization complete
-  }
-});
+// async.series([
+//   function connect(callback) {
+//     client.connect(callback);
+//   },
+//   function clear(callback) {
+//     client.query('DROP DATABASE IF EXISTS mynode_db', callback);
+//   },
+//   function create_db(callback) {
+//     client.query('CREATE DATABASE mynode_db', callback);
+//   },
+//   function use_db(callback) {
+//     client.query('USE mynode_db', callback);
+//   },
+//   function create_table(callback) {
+//      client.query('CREATE TABLE HIKES (' +
+//                          'ID VARCHAR(40), ' +
+//                          'HIKE_DATE DATE, ' +
+//                          'NAME VARCHAR(40), ' +
+//                          'DISTANCE VARCHAR(40), ' +
+//                          'LOCATION VARCHAR(40), ' +
+//                          'WEATHER VARCHAR(40), ' +
+//                          'PRIMARY KEY(ID))', callback);
+//   },
+//   function insert(callback) {
+//     var hike = {
+//       HIKE_DATE: new Date(),
+//       NAME: 'Someone',
+//       LOCATION: 'Glacier Point, Yosemite',
+//       DISTANCE: '7,000 ft',
+//       WEATHER:'Cold'
+//     };
+//     client.query('INSERT INTO HIKES set ?', hike, callback);
+//   }
+// ], function (err, results) {
+//   if (err) {
+//     // Exception initializing database
+//     throw err;
+//   } else {
+//     // Database initialization complete
+//   }
+// });
 
 app.use('/', routes);
 app.get('/hikes', hike.index);
