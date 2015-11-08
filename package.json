@@ -1,5 +1,5 @@
 {
-  "name": "aerofs-phoenix-2",
+  "name": "aerosearch",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -17,5 +17,6 @@
     "async": "*",
     "node-uuid": "*",
     "xmlhttprequest": "*"
+    "xregexp": "*"
   }
 }
