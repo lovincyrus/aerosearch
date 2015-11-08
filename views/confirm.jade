@@ -58,7 +58,7 @@ html.no-js(lang='en', ng-app='AeroSearch')
         .slider-typography.text-center
           .slider-text-middle-main
             .slider-text-bottom.padding-left-right-px.animated.fadeInUp
-              span.owl-subtitle.white-text Are you going to
+              span.owl-subtitle.white-text Traveling to
               .separator-line-thick.bg-yellow.margin-three
               span#location.owl-title.white-text.center-col.margin-ten.no-margin-top !{ location }?
               section.button-style.wow.fadeIn.animated.no-padding(style='visibility: visible; -webkit-animation: fadeIn;')
@@ -80,14 +80,15 @@ html.no-js(lang='en', ng-app='AeroSearch')
       var settings = {
       "async": true,
       "crossDomain": true,
-      "url": "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + position.coords.latitude + "," + position.coords.longitude + "&key=AIzaSyBR2eQQUQK7odXQqmyatn1uQEeV1DM8lAg&result_type=locality",
+      "url": "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + position.coords.latitude + "," + position.coords.longitude + "&key=AIzaSyC8RRZ6l3rBJ43DunaYkX2Xw7yawB0tlDE&result_type=locality",
       "method": "GET"
-      }
+      };
       $.ajax(settings).done(function (response) {
-      _city = response.results[1].formatted_address;
+      _city = response.results[0].formatted_address;
+      console.log('City is: ' + _city);
       });
       });
       };
       function forward() {
-      window.location = '/result?ori=' + encodeURIComponent(_city) + '&des=' + encodeURIComponent(des);
+      window.location = '/result?ori=' + _city + '&des=' + encodeURIComponent(des);
       }

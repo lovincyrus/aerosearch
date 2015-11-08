@@ -53,7 +53,32 @@ router.get('/result/', function(req, res, next) {
 	var _originatingCity = req.param('ori');
 	var _destinationCity = req.param('des');
 
-	var cityName = "-99";
+	var data = null;
+
+	var xhr = new XMLHttpRequest();
+	xhr.withCredentials = true;
+
+	xhr.addEventListener("readystatechange", function () {
+	  if (this.readyState === this.DONE) {
+	    //console.log(this.responseText);
+	    var airportName = this.responseText;
+	    airportName = airportName.substring(airportName.indexOf('name') + 7);
+	    airportName = airportName.substring(0, airportName.indexOf('"'));
+	    //console.log(airportName);
+	    var airportCode = this.responseText;
+	    airportCode = airportCode.substring(airportCode.indexOf('code') + 7);
+	    airportCode = airportCode.substring(0, airportCode.indexOf('"'));
+	    _originatingCity = airportName + ' (' + airportCode + ')';
+	  }
+	});
+
+	xhr.open("GET", "https://airport.api.aero/airport/nearest/37.777169799999996/-122.41839970000001?user_key=18735d2ae0309dddbc46f1ff985ba37a");
+	xhr.setRequestHeader("cache-control", "no-cache");
+	xhr.setRequestHeader("postman-token", "d1292734-49e3-dc53-71fd-65535b06dc74");
+
+	xhr.send(data);
+
+	var _destAirport = "-99";
 	
 	//api call that returns the data we want
 	var http = require("https");
@@ -62,7 +87,7 @@ router.get('/result/', function(req, res, next) {
 		"method": "GET",
 		"hostname": "maps.googleapis.com",
 		"port": null,
-		"path": "/maps/api/place/textsearch/json?query="+encodeURIComponent(_destinationCity)+"&key=AIzaSyCMtSm2QTM05-gUB3IrNfp5lk9L_u5cjKY"
+		"path": "/maps/api/place/textsearch/json?query="+encodeURIComponent(_destinationCity)+"&key=AIzaSyC8RRZ6l3rBJ43DunaYkX2Xw7yawB0tlDE"
 	};
 	
 	var request = http.request(options, function (response) {
@@ -74,23 +99,50 @@ router.get('/result/', function(req, res, next) {
 	
 		response.on("end", function () {
 			var body = Buffer.concat(chunks);
-			cityName = body.toString();
-			cityName = cityName.substring(cityName.indexOf('formatted_address'));
-			cityName = cityName.substring(cityName.indexOf('"'));
-			cityName = cityName.substring(cityName.indexOf('"') + 1);
-			cityName = cityName.substring(cityName.indexOf('"') + 1);
-			var fullName = cityName.substring(0, cityName.indexOf('"'));
-			cityName = cityName.substring(0, cityName.indexOf(","));
+			_destAirport = body.toString();
+			_destAirport = _destAirport.substring(_destAirport.indexOf('lat') + 7);
+			var _destAirportLat = _destAirport.substring(0, _destAirport.indexOf(','));
+			_destAirport = _destAirport.substring(_destAirport.indexOf('lng') + 7);
+			var _destAirportLng = _destAirport.substring(0, _destAirport.indexOf('}'));
+			// cityName = cityName.substring(cityName.indexOf('"'));
+			// cityName = cityName.substring(cityName.indexOf('"') + 1);
+			// cityName = cityName.substring(cityName.indexOf('"') + 1);
+			// var fullName = cityName.substring(0, cityName.indexOf('"'));
+			// cityName = cityName.substring(0, cityName.indexOf(","));
 
-			console.log(cityName);
+			// _destinationCity = cityName;
 
-			_destinationCity = cityName;
+			var data = null;
 
-			res.render('result', {
-			title: 'AeroSearch',
-			originating: _originatingCity,
-			destination: _destinationCity
-	});
+			var xhr = new XMLHttpRequest();
+			xhr.withCredentials = true;
+
+			xhr.addEventListener("readystatechange", function () {
+			  if (this.readyState === this.DONE) {
+			    //console.log(this.responseText);
+			    var airportName = this.responseText;
+			    airportName = airportName.substring(airportName.indexOf('name') + 7);
+			    airportName = airportName.substring(0, airportName.indexOf('"'));
+			    console.log(airportName);
+			    var airportCode = this.responseText;
+			    airportCode = airportCode.substring(airportCode.indexOf('code') + 7);
+			    airportCode = airportCode.substring(0, airportCode.indexOf('"'));
+			    _destAirport = airportName + ' (' + airportCode + ')';
+			    console.log(_destAirport);
+
+				res.render('result', {
+				title: 'AeroSearch',
+				originating: _originatingCity,
+				destination: _destAirport
+				});
+			  }
+			});
+
+			xhr.open("GET", "https://airport.api.aero/airport/nearest/" + _destAirportLat + "/" + _destAirportLng + "?user_key=18735d2ae0309dddbc46f1ff985ba37a");
+			xhr.setRequestHeader("cache-control", "no-cache");
+			xhr.setRequestHeader("postman-token", "d1292734-49e3-dc53-71fd-65535b06dc74");
+
+			xhr.send(data);
 		});
 	});
 

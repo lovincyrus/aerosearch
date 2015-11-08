@@ -324,7 +324,7 @@
 }
 .event-block {
   display: block;
-  background-color: #c3c3c3;
+  background-color: transparent !important;
   width: 20px;
   height: 100%;
 }
@@ -389,13 +389,13 @@
 }
 .cal-year-box .row-fluid:hover,
 .cal-row-fluid:hover {
-  background-color: #fafafa;
+  background-color: transparent !important;
 }
 .cal-month-day {
   height: 100px;
 }
 [class*="cal-cell"]:hover {
-  background-color: #ededed;
+  background-color: transparent !important;
 }
 .cal-year-box [class*="span"],
 .cal-month-box [class*="cal-cell"] {
