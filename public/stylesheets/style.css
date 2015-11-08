@@ -228,6 +228,7 @@ i { color: #9a9a9a; margin: 0 3px}
     Custom
 ====================================== */
 
+.search-btn { position: absolute; padding: 5px 20px 6px !important; margin-left: 2%;}
 .center-col{ float:none !important; margin-left:auto !important; margin-right:auto !important}
 /* separator */
 .separator-line { height: 2px; margin: 0 auto; width: 30px; margin:7% auto}

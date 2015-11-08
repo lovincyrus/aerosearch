@@ -52,11 +52,51 @@ router.get('/confirm/', function(req, res, next) {
 router.get('/result/', function(req, res, next) {
 	var _originatingCity = req.param('ori');
 	var _destinationCity = req.param('des');
-	res.render('result', {
-		title: 'AeroSearch',
-		originating: _originatingCity,
-		destination: _destinationCity
+
+	var cityName = "-99";
+	
+	//api call that returns the data we want
+	var http = require("https");
+
+	var options = {
+		"method": "GET",
+		"hostname": "maps.googleapis.com",
+		"port": null,
+		"path": "/maps/api/place/textsearch/json?query="+encodeURIComponent(_destinationCity)+"&key=AIzaSyCMtSm2QTM05-gUB3IrNfp5lk9L_u5cjKY"
+	};
+	
+	var request = http.request(options, function (response) {
+		var chunks = [];
+	
+		response.on("data", function (chunk) {
+			chunks.push(chunk);
+		});
+	
+		response.on("end", function () {
+			var body = Buffer.concat(chunks);
+			cityName = body.toString();
+			cityName = cityName.substring(cityName.indexOf('formatted_address'));
+			cityName = cityName.substring(cityName.indexOf('"'));
+			cityName = cityName.substring(cityName.indexOf('"') + 1);
+			cityName = cityName.substring(cityName.indexOf('"') + 1);
+			var fullName = cityName.substring(0, cityName.indexOf('"'));
+			cityName = cityName.substring(0, cityName.indexOf(","));
+
+			console.log(cityName);
+
+			_destinationCity = cityName;
+
+			res.render('result', {
+			title: 'AeroSearch',
+			originating: _originatingCity,
+			destination: _destinationCity
 	});
+		});
+	});
+
+	request.end();
+
+	
 });
 
 module.exports = router;
