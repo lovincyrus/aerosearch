@@ -16,6 +16,7 @@
     "mysql": "*",
     "async": "*",
     "node-uuid": "*",
+    "xmlhttprequest": "*"
     "xregexp": "*"
   }
 }

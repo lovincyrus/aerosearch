@@ -24,10 +24,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.set('connection', mysql.createConnection({
-  host: process.env.RDS_HOSTNAME,
-  user: process.env.RDS_USERNAME,
-  port: process.env.RDS_PORT,
-  password: process.env.RDS_PASSWORD
+  host: 'aadvgaavthyp1i.csia3bccem4f.us-west-1.rds.amazonaws.com',
+  user: 'ebaerosearch',
+  port: '3306',
+  password: 'ebaerosearch'
 }));
 
 var client = app.get('connection');
